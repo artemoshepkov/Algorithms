@@ -1,24 +1,26 @@
 ﻿using Algorithms.ConsoleOutput;
+using Algorithms.DFT;
 using Algorithms.Sorts;
 
 namespace Algorithms
 {
     public class Program
     {
-
         private static void Main()
         {
-            int[][] arrays =
-            {
-                new int[] { 0 },
-                new int[] { 0, 1 },
-                new int[] { 1, 0 },
-                new int[] { 5, 4, 3, 2, 1 },
-                RandomGenerator.GenerateArray(10, 0, 100)
-            };
+            var array = GetArrayFunc(x => x / 2, 10);
+            array.Print();
+            var directTransformedArray = DiscreteFourierTransform.DirectTransform(array);
+            directTransformedArray.Print();
+            DiscreteFourierTransform.ReverseTransform(directTransformedArray).Print();
+        }
 
-            //SortVerify.Verify(arrays, MergeSorter.Sort);
-            SortsUI.Start(MergeSorter.Sort);
+        private static double[] GetArrayFunc(Func<double, double> func, int number)
+        {
+            var result = new double[number];
+            for (int i = 0; i < number; i++)
+                result[i] = func(i);
+            return result;
         }
     }
 }

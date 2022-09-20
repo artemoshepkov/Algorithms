@@ -12,6 +12,7 @@ namespace Algorithms
         {
             foreach (var item in collection)
                 Console.Write(item + " ");
+            Console.WriteLine();
         }
     }
 }
