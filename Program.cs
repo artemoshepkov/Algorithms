@@ -9,18 +9,40 @@ namespace Algorithms
     {
         private static void Main()
         {
-            var complexArray = new Complex[] { new Complex(2, 1), new Complex(2, 2), new Complex(2, 3), new Complex(2, 2), new Complex(2, 1) };
+            var complexArray = new Complex[] { new Complex(2, 0), new Complex(1, 0), new Complex(0, 0) };
             complexArray.Print();
 
             int numberOperations;
 
             var directTransformedArray = DiscreteFourierTransform.DirectTransform(complexArray, out numberOperations);
-            Console.Write(numberOperations + " : ");
-            directTransformedArray.Print();
+            Console.Write(numberOperations + " :\n");
+            foreach (var item in directTransformedArray)
+            {
+                Console.WriteLine(item);
+            }
 
             var reverseTransformedArray = DiscreteFourierTransform.ReverseTransform(directTransformedArray, out numberOperations);
-            Console.Write(numberOperations + " : ");
-            reverseTransformedArray.Print();
+            Console.Write(numberOperations + " :\n");
+            foreach (var item in reverseTransformedArray)
+            {
+                Console.WriteLine("(" + Math.Round(item.Real) + ", " + Math.Round(item.Imaginary) + ")");
+            }
+
+            Console.WriteLine("----------------------------------");
+
+            var directTransformedArray1 = SemiFastDFT.DirectTransform(complexArray, out numberOperations);
+            Console.Write(numberOperations + " :\n");
+            foreach (var item in directTransformedArray)
+            {
+                Console.WriteLine(item);
+            }
+
+            var reverseTransformedArray1 = SemiFastDFT.ReverseTransform(directTransformedArray, out numberOperations);
+            Console.Write(numberOperations + " :\n");
+            foreach (var item in reverseTransformedArray)
+            {
+                Console.WriteLine("(" + Math.Round(item.Real) + ", " + Math.Round(item.Imaginary) + ")");
+            }
         }
 
         private static double[] GetArrayFunc(Func<double, double> func, int number)
