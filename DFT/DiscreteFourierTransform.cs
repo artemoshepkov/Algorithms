@@ -5,7 +5,7 @@ namespace Algorithms.DFT
 {
     public static class DiscreteFourierTransform
     {
-        public static Complex[] DirectTransform(Complex[] array, out int numberOperations)
+        public static Complex[] DirectTransform(Complex[] array,out int numberOperations)
         {
             numberOperations = 0;
 
@@ -18,7 +18,7 @@ namespace Algorithms.DFT
                 {
                     var arg = 2 * Math.PI * k * j / N;
                     DDFT[k] += GetComplexExpDegree(arg, -1) * array[j];
-                    numberOperations++;
+                    numberOperations += 5;
                 }
                 DDFT[k] /= N;
             }
@@ -38,7 +38,7 @@ namespace Algorithms.DFT
                 {
                     var arg = 2 * Math.PI * k * j / N;
                     RDFT[k] += GetComplexExpDegree(arg, 1) * array[j];
-                    numberOperations++;
+                    numberOperations += 5;
                 }
             }
 
