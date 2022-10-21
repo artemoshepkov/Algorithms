@@ -33,7 +33,7 @@ namespace Algorithms.DFT
                     var j2 = j % p2;
                     var k1 = k / p1;
                     var arg = 2 * Math.PI * j1 * k1 / p1;
-                    DDFT[k] += array[j2 + p2 * j1] * GetComplexExpDegree(arg, -1);
+                    DDFT[k] += array[j] * GetComplexExpDegree(arg, -1);
                     numberOperations += 5;
                 }
                 DDFT[k] /= p1;
@@ -43,7 +43,7 @@ namespace Algorithms.DFT
                     var j2 = j % p2;
                     var k1 = k / p1;
                     var k2 = k % p1;
-                    var arg = 2 * Math.PI * (j2 / (p1 * p2) * (k1 + p1 * k2));
+                    var arg = 2 * Math.PI * j2 * k / N;
                     DDFT[k] += DDFT[k] * GetComplexExpDegree(arg, -1);
                     numberOperations += 5;
                 }
@@ -72,7 +72,7 @@ namespace Algorithms.DFT
                     var j1 = j / p1;
                     var j2 = j % p2;
                     var k1 = k / p1;
-                    var arg = 2 * Math.PI * j1 * k1 / p1;
+                    double arg = 2 * Math.PI * (double)(j1 * k1 / p1);
                     DDFT[k] += array[j2 + p2 * j1] * GetComplexExpDegree(arg, 1);
                     numberOperations += 5;
                 }
@@ -82,7 +82,7 @@ namespace Algorithms.DFT
                     var j2 = j % p2;
                     var k1 = k / p1;
                     var k2 = k % p1;
-                    var arg = 2 * Math.PI * (j2 / (p1 * p2) * (k1 + p1 * k2));
+                    double arg = 2 * Math.PI * (double)(j2 / (p1 * p2) * (k1 + p1 * k2));
                     DDFT[k] += DDFT[k] * GetComplexExpDegree(arg, 1);
                     numberOperations += 5;
                 }

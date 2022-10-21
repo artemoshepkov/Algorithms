@@ -5,9 +5,13 @@ namespace Algorithms.DFT
 {
     public static class DiscreteFourierTransform
     {
-        public static Complex[] DirectTransform(Complex[] array,out int numberOperations)
+        public static Complex[] DirectTransform(double[] array)
         {
-            numberOperations = 0;
+            return DirectTransform(array.Select(x => new Complex(x, 0)).ToArray());
+        }
+        public static Complex[] DirectTransform(Complex[] array)
+        {
+            //numberOperations = 0;
 
             var DDFT = new Complex[array.Length];
 
@@ -18,16 +22,16 @@ namespace Algorithms.DFT
                 {
                     var arg = 2 * Math.PI * k * j / N;
                     DDFT[k] += GetComplexExpDegree(arg, -1) * array[j];
-                    numberOperations += 5;
+                    //numberOperations += 5;
                 }
                 DDFT[k] /= N;
             }
 
             return DDFT;
         }
-        public static Complex[] ReverseTransform(Complex[] array, out int numberOperations)
+        public static Complex[] ReverseTransform(Complex[] array)
         {
-            numberOperations = 0;
+            //numberOperations = 0;
 
             var RDFT = new Complex[array.Length];
 
@@ -38,7 +42,7 @@ namespace Algorithms.DFT
                 {
                     var arg = 2 * Math.PI * k * j / N;
                     RDFT[k] += GetComplexExpDegree(arg, 1) * array[j];
-                    numberOperations += 5;
+                    //numberOperations += 5;
                 }
             }
 

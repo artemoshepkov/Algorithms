@@ -1,6 +1,4 @@
-C:\Users\artem\source\repos\Algorithms\bin\Debug\net6.0\Algorithms.exe
 C:\Users\artem\source\repos\Algorithms\bin\Debug\net6.0\Algorithms.deps.json
-C:\Users\artem\source\repos\Algorithms\bin\Debug\net6.0\Algorithms.runtimeconfig.json
 C:\Users\artem\source\repos\Algorithms\bin\Debug\net6.0\Algorithms.dll
 C:\Users\artem\source\repos\Algorithms\bin\Debug\net6.0\Algorithms.pdb
 C:\Users\artem\source\repos\Algorithms\obj\Debug\net6.0\Algorithms.csproj.AssemblyReference.cache
@@ -11,7 +9,6 @@ C:\Users\artem\source\repos\Algorithms\obj\Debug\net6.0\Algorithms.csproj.CoreCo
 C:\Users\artem\source\repos\Algorithms\obj\Debug\net6.0\Algorithms.dll
 C:\Users\artem\source\repos\Algorithms\obj\Debug\net6.0\refint\Algorithms.dll
 C:\Users\artem\source\repos\Algorithms\obj\Debug\net6.0\Algorithms.pdb
-C:\Users\artem\source\repos\Algorithms\obj\Debug\net6.0\Algorithms.genruntimeconfig.cache
 C:\Users\artem\source\repos\Algorithms\obj\Debug\net6.0\ref\Algorithms.dll
 D:\DevelopProjects\Algorithms\bin\Debug\net6.0\Algorithms.exe
 D:\DevelopProjects\Algorithms\bin\Debug\net6.0\Algorithms.deps.json
@@ -28,3 +25,15 @@ D:\DevelopProjects\Algorithms\obj\Debug\net6.0\refint\Algorithms.dll
 D:\DevelopProjects\Algorithms\obj\Debug\net6.0\Algorithms.pdb
 D:\DevelopProjects\Algorithms\obj\Debug\net6.0\Algorithms.genruntimeconfig.cache
 D:\DevelopProjects\Algorithms\obj\Debug\net6.0\ref\Algorithms.dll
+C:\Users\artem\source\repos\Algorithms\bin\Debug\net6.0\NUnit3.TestAdapter.dll
+C:\Users\artem\source\repos\Algorithms\bin\Debug\net6.0\NUnit3.TestAdapter.pdb
+C:\Users\artem\source\repos\Algorithms\bin\Debug\net6.0\nunit.engine.dll
+C:\Users\artem\source\repos\Algorithms\bin\Debug\net6.0\nunit.engine.api.dll
+C:\Users\artem\source\repos\Algorithms\bin\Debug\net6.0\nunit.engine.core.dll
+C:\Users\artem\source\repos\Algorithms\bin\Debug\net6.0\testcentric.engine.metadata.dll
+C:\Users\artem\source\repos\Algorithms\bin\Debug\net6.0\Algorithms.exe
+C:\Users\artem\source\repos\Algorithms\bin\Debug\net6.0\Algorithms.runtimeconfig.json
+C:\Users\artem\source\repos\Algorithms\bin\Debug\net6.0\nunit.framework.dll
+C:\Users\artem\source\repos\Algorithms\bin\Debug\net6.0\nunitlite.dll
+C:\Users\artem\source\repos\Algorithms\obj\Debug\net6.0\Algorithms.csproj.CopyComplete
+C:\Users\artem\source\repos\Algorithms\obj\Debug\net6.0\Algorithms.genruntimeconfig.cache

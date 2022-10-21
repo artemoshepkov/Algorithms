@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DevelopProjects\\Algorithms\\Algorithms.csproj": {}
+    "C:\\Users\\artem\\source\\repos\\Algorithms\\Algorithms.csproj": {}
   },
   "projects": {
-    "D:\\DevelopProjects\\Algorithms\\Algorithms.csproj": {
+    "C:\\Users\\artem\\source\\repos\\Algorithms\\Algorithms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DevelopProjects\\Algorithms\\Algorithms.csproj",
+        "projectUniqueName": "C:\\Users\\artem\\source\\repos\\Algorithms\\Algorithms.csproj",
         "projectName": "Algorithms",
-        "projectPath": "D:\\DevelopProjects\\Algorithms\\Algorithms.csproj",
-        "packagesPath": "C:\\Users\\ksusa\\.nuget\\packages\\",
-        "outputPath": "D:\\DevelopProjects\\Algorithms\\obj\\",
+        "projectPath": "C:\\Users\\artem\\source\\repos\\Algorithms\\Algorithms.csproj",
+        "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\artem\\source\\repos\\Algorithms\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ksusa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\artem\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -43,13 +43,32 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.3, )"
+            },
+            "NUnit.ConsoleRunner": {
+              "target": "Package",
+              "version": "[3.15.2, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[4.2.1, )"
+            },
+            "NUnitLite": {
+              "target": "Package",
+              "version": "[3.13.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -58,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

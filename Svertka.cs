@@ -1,35 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Algorithms.DFT;
+using System.Numerics;
 
 namespace Algorithms
 {
     public class Svertka
     {
-        public static double[] Run(double[] array1, double[] array2)
+        public static int[] CalculateCommon(int[] array1, int[] array2)
         {
-            var numberOperation = 0;
+            var result = new int[array1.Length + array2.Length - 1];
 
-            var result = new double[array1.Length + array2.Length - 1];
-
-            for (int i = 0; i < result.Length; i++)
-            {
-                for (int j = 0; i - j >= 0;  j++)
-                {
-                    if(j < array1.Length && i - j < array2.Length)
-                    {
-                        result[i] += array1[j] * array2[i - j];
-                        numberOperation += 2;
-                    }
-                }
-            }
-
-            Console.WriteLine("number of operations - " + numberOperation);
+            for (int k = 0; k < array1.Length; k++)
+                for (int l = 0; l < array2.Length; l++)
+                    result[k + l] += array1[k] * array2[l];
 
             return result;
+        }
+        public static List<int> CalculateCommon(List<int> array1, List<int> array2)
+        {
+            var result = new List<int>(array1.Count + array2.Count - 1);
 
+            for (int i = 0; i < array1.Count + array2.Count - 1; i++)
+                result.Add(0);
+
+            for (int k = 0; k < array1.Count; k++)
+                for (int l = 0; l < array2.Count; l++)
+                    result[k + l] += array1[k] * array2[l];
+
+            return result;
         }
     }
 }

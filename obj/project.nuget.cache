@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "9xQ8MnwRprHr9nLr2B4iBxHon9WGT0A78ui3ZnPktAssTyNR4TR4k5GsvBg3wl8u7Ivz8unrATF7TtIjfwW3iA==",
+  "dgSpecHash": "+Tcv+4a5Kj22F8iu3+XqoMpJVH4AIXFxU0gt9MA6VsZqnfSw9vVN2OYsN4/P7ztKyPMKVlr0fKP6epxzgPuqzQ==",
   "success": true,
-  "projectFilePath": "D:\\DevelopProjects\\Algorithms\\Algorithms.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\artem\\source\\repos\\Algorithms\\Algorithms.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\artem\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\artem\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
+    "C:\\Users\\artem\\.nuget\\packages\\nunit\\3.13.3\\nunit.3.13.3.nupkg.sha512",
+    "C:\\Users\\artem\\.nuget\\packages\\nunit.consolerunner\\3.15.2\\nunit.consolerunner.3.15.2.nupkg.sha512",
+    "C:\\Users\\artem\\.nuget\\packages\\nunit3testadapter\\4.2.1\\nunit3testadapter.4.2.1.nupkg.sha512",
+    "C:\\Users\\artem\\.nuget\\packages\\nunitlite\\3.13.3\\nunitlite.3.13.3.nupkg.sha512"
+  ],
   "logs": []
 }
