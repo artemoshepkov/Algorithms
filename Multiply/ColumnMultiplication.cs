@@ -10,7 +10,11 @@ namespace Algorithms.Multiply
     {
         public static int Multiply(int a, int b)
         {
-            var listResult = Svertka.CalculateCommon(SplitNumberToList(a), SplitNumberToList(b));
+            return FromListToNumber(Multiply(SplitNumberToList(a), SplitNumberToList(b)));
+        }
+        public static List<int> Multiply(List<int> a, List<int> b)
+        {
+            var listResult = Svertka.CalculateCommon(a, b);
 
             for (int i = 0; i < listResult.Count; i++)
             {
@@ -25,10 +29,9 @@ namespace Algorithms.Multiply
                 }
             }
 
-            listResult.Reverse();
-
-            return FromListToNumber(listResult);
+            return listResult;
         }
+
         public static List<int> SplitNumberToList(int number)
         {
             var numberList = new List<int>();
@@ -46,6 +49,8 @@ namespace Algorithms.Multiply
         }
         public static int FromListToNumber(List<int> listNumber)
         {
+            listNumber.Reverse();
+
             int number = listNumber.First();
 
             for (int i = 1; i < listNumber.Count; i++)
