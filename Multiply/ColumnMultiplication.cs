@@ -8,13 +8,16 @@ namespace Algorithms.Multiply
 {
     public class ColumnMultiplication
     {
+        public static int OperationCount = 0;
+
         public static int Multiply(int a, int b)
         {
             return FromListToNumber(Multiply(SplitNumberToList(a), SplitNumberToList(b)));
         }
+
         public static List<int> Multiply(List<int> a, List<int> b)
         {
-            var listResult = Svertka.CalculateCommon(a, b);
+            var listResult = Svertka.CalculateCommon(a, b, ref OperationCount);
 
             for (int i = 0; i < listResult.Count; i++)
             {
@@ -23,9 +26,13 @@ namespace Algorithms.Multiply
                     listResult[i] -= 10;
 
                     if (listResult.Count <= i + 1)
+                    {
                         listResult.Add(0);
+                    }
 
                     listResult[i + 1] += 1;
+
+                    OperationCount += 1;
                 }
             }
 

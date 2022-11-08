@@ -2,6 +2,8 @@
 {
     public static class MatrixMultiplication
     {
+        public static int OperationCount = 0;
+
         public static int[,] MultiplyMatrices(int[,] A, int[,] B)
         {
             var result = new int[A.GetLength(0), B.GetLength(1)];
@@ -114,7 +116,13 @@
 
             for (int i = 0; i < C.GetLength(0); i++)
                 for (int j = 0; j < C.GetLength(0); j++)
+                {
+                    if (A[i, j] == 0 && B[i, j] == 0)
+                        continue;
+
                     C[i, j] = A[i, j] + sign * B[i, j];
+                    OperationCount++;
+                }
 
             return C;
         }

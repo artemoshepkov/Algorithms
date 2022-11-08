@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Multiply
 {
-    public class FastMultiplication
+    public class FastMultiplication // O(n) = n^1.58
     {
+        public static int OperationCount = 0;
+
         public static int Multiply(int num1, int num2)
         {
             return FromListToNumber(Multiply(SplitNumberToList(num1), SplitNumberToList(num2)));
@@ -18,7 +20,9 @@ namespace Algorithms.Multiply
             var numX = DeleteExtraZeros(x);
             var numY = DeleteExtraZeros(y);
             if (FromListToNumber(numX) < 10 && FromListToNumber(numY) < 10)
+            {
                 return ColumnMultiplication.Multiply(numX, numY);
+            }
 
             var length = Math.Max(x.Count, y.Count);
             length += length % 2 == 0 ? 0 : 1;
@@ -55,16 +59,19 @@ namespace Algorithms.Multiply
 
         public static List<int> SumBinNumberLists(List<int> x, List<int> y)
         {
+            OperationCount++;
             return SplitNumberToList(FromListToNumber(x) + FromListToNumber(y));
         }
 
         public static List<int> MultiplyBinNumberLists(List<int> x, List<int> y)
         {
+            OperationCount++;
             return SplitNumberToList(FromListToNumber(x) * FromListToNumber(y));
         }
 
         public static List<int> DifferenceBinNumberLists(List<int> x, List<int> y)
         {
+            OperationCount++;
             return SplitNumberToList(FromListToNumber(x) - FromListToNumber(y));
         }
 
