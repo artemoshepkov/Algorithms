@@ -1,8 +1,4 @@
-﻿using Algorithms.ConsoleOutput;
-using Algorithms.DFT;
-using Algorithms.Multiply;
-using Algorithms.Sorts;
-using System.Numerics;
+﻿using Algorithms.Multiply;
 
 namespace Algorithms
 {
@@ -10,7 +6,19 @@ namespace Algorithms
     {
         private static void Main()
         {
-            TestMultiplyNumbers();
+            var path = BackpackTask.GetMaxBenefit(new List<Product>()
+            {
+                new Product() { Weight = 3, Cost = 8 },
+                new Product() { Weight = 5, Cost = 14 },
+                new Product() { Weight = 8, Cost = 23 },
+                }, 
+                13);
+
+            Console.WriteLine(path.Item1);
+            foreach (var product in path.Item2)
+            {
+                Console.Write(product.Weight + " ");
+            }
 
             //TestMatricesMultiply();
         }

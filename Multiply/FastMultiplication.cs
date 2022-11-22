@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Algorithms.Multiply
+﻿namespace Algorithms.Multiply
 {
     public class FastMultiplication // O(n) = n^1.58
     {
