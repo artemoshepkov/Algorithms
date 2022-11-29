@@ -6,21 +6,14 @@ namespace Algorithms
     {
         private static void Main()
         {
-            var path = BackpackTask.GetMaxBenefit(new List<Product>()
-            {
-                new Product() { Weight = 3, Cost = 8 },
-                new Product() { Weight = 5, Cost = 14 },
-                new Product() { Weight = 8, Cost = 23 },
-                }, 
-                13);
+            var r = new int[5] { 10, 20, 50, 1, 100 };
 
-            Console.WriteLine(path.Item1);
-            foreach (var product in path.Item2)
-            {
-                Console.Write(product.Weight + " ");
-            }
+            var res = MultiplicationOrderMatrices.GetOrder(r);
 
-            //TestMatricesMultiply();
+            Console.WriteLine(res.Item1 + "\n" + res.Item2);
+
+
+
         }
 
         private static void TestMultiplyNumbers()
