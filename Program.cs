@@ -6,118 +6,73 @@ namespace Algorithms
     {
         private static void Main()
         {
-            var r = new int[5] { 10, 20, 50, 1, 100 };
+            var A = new int[,] { 
+                { 1, 2, 3, 4}, 
+                { 1, 2, 3, 4 }, 
+                { 1, 2, 3, 4 }, 
+                { 1, 2, 3, 4 }, };
+            var B = new int[,] { 
+                { 1, 2, 3, 4 }, 
+                { 1, 2, 3, 4 }, 
+                { 1, 2, 3, 4 }, 
+                { 1, 2, 3, 4 },};
 
-            var res = MultiplicationOrderMatrices.GetOrder(r);
+            TestMatricesMultiply(A, B, true);
 
-            Console.WriteLine(res.Item1 + "\n" + res.Item2);
+            Console.WriteLine("---------------------------");
 
-
-
+            TestMatricesMultiply(100, false);
         }
 
-        private static void TestMultiplyNumbers()
+        private static void TestMatricesMultiply(int size, bool isOut)
         {
-            Console.WriteLine(ColumnMultiplication.Multiply(12, 50) + " - " + ColumnMultiplication.OperationCount);
-            ColumnMultiplication.OperationCount = 0;
-            Console.WriteLine(ColumnMultiplication.Multiply(123, 1000) + " - " + ColumnMultiplication.OperationCount);
-            ColumnMultiplication.OperationCount = 0;
-            Console.WriteLine(ColumnMultiplication.Multiply(99, 99) + " - " + ColumnMultiplication.OperationCount);
-            ColumnMultiplication.OperationCount = 0;
-            Console.WriteLine(ColumnMultiplication.Multiply(999999, 99999) + " - " + ColumnMultiplication.OperationCount);
-            ColumnMultiplication.OperationCount = 0;
-            Console.WriteLine("-------------------------------------");
-            Console.WriteLine(FastMultiplication.Multiply(12, 50) + " - " + FastMultiplication.OperationCount);
-            FastMultiplication.OperationCount = 0;
-            Console.WriteLine(FastMultiplication.Multiply(123, 1000) + " - " + FastMultiplication.OperationCount);
-            FastMultiplication.OperationCount = 0;
-            Console.WriteLine(FastMultiplication.Multiply(99, 99) + " - " + FastMultiplication.OperationCount);
-            FastMultiplication.OperationCount = 0;
-            Console.WriteLine(FastMultiplication.Multiply(999999, 99999) + " - " + FastMultiplication.OperationCount);
-            FastMultiplication.OperationCount = 0;
+            var A = new int[size, size];
+            var B = new int[size, size];
 
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    B[i, j] = j;
+                    A[i, j] = j;
+                }
+            }
+
+            TestMatricesMultiply(A, B, false);
         }
 
-        private static void TestMatricesMultiply()
+        private static void TestMatricesMultiply(int[,] A, int[,] B, bool isOut)
         {
-            //var A = new int[,] { {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25}, };
-
-            //var B = new int[,] { {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
-            //                        {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25}, };
-
-            var A = new int[,] { { 1, 2, 3, 4 }, { 1, 2, 3, 4 }, { 1, 2, 3, 4 }, { 1, 2, 3, 4 }, };
-            var B = new int[,] { { 1, 2, 3, 4 }, { 1, 2, 3, 4 }, { 1, 2, 3, 4 }, { 1, 2, 3, 4 }, };
-
             var C = MatrixMultiplication.MultiplyMatrices(A, B);
 
 
-            for (int i = 0; i < C.GetLength(0); i++)
+            if (isOut)
             {
-                for (int j = 0; j < C.GetLength(1); j++)
-                    Console.Write(C[i, j] + " ");
-                Console.WriteLine();
+                for (int i = 0; i < C.GetLength(0); i++)
+                {
+                    for (int j = 0; j < C.GetLength(1); j++)
+                        Console.Write(C[i, j] + " ");
+                    Console.WriteLine();
+                }
             }
 
-            Console.WriteLine("Operation count - {0}", MatrixMultiplication.OperationCount);
+            Console.WriteLine("Operation count fast multiplication- {0}", MatrixMultiplication.OperationCount);
 
             int operationNumber = 0;
             C = MatrixMultiply(A, B, ref operationNumber);
 
-            for (int i = 0; i < C.GetLength(0); i++)
+
+            if (isOut)
             {
-                for (int j = 0; j < C.GetLength(1); j++)
-                    Console.Write(C[i, j] + " ");
-                Console.WriteLine();
+                for (int i = 0; i < C.GetLength(0); i++)
+                {
+                    for (int j = 0; j < C.GetLength(1); j++)
+                        Console.Write(C[i, j] + " ");
+                    Console.WriteLine();
+                }
             }
 
-            Console.WriteLine("Operation count - {0}", operationNumber);
+            Console.WriteLine("Operation count common multiplication - {0}", operationNumber);
         }
 
         private static int[,] MatrixMultiply(int[,] A, int[,] B, ref int operationNumber)
@@ -131,19 +86,11 @@ namespace Algorithms
                     for (int k = 0; k < A.GetLength(1); k++)
                     {
                         result[i, j] += A[i, k] * B[k, j];
-                        operationNumber += 2;
+                        operationNumber += 1;
                     }
                 }
             }
 
-            return result;
-        }
-
-        private static double[] GetArrayFunc(Func<double, double> func, int number)
-        {
-            var result = new double[number];
-            for (int i = 0; i < number; i++)
-                result[i] = func(i);
             return result;
         }
     }
